@@ -18,4 +18,4 @@ jobs:
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.USERNAME }}
                 key: ${{ secrets.SSHKEY }}
-                script: "cd /home/ubuntu/deveops && ./laraveldeploy.sh"
+                script: "cd /home/ubuntu/devops && ./laraveldeploy.sh"

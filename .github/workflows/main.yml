@@ -11,7 +11,6 @@ jobs:
 
         steps:
          - uses: actions/checkout@v2
-
          - name: Deploy to Lightsail
            uses: appleboy/ssh-action@v1.0.3
            with:

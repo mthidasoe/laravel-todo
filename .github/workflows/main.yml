@@ -1,0 +1,20 @@
+name: deploy
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy-laravel:
+        runs-on: ubuntu-latest
+
+        steps:
+         - uses: actions/checkout@v2
+         - name: Deploy to Lightsail
+           uses: appleboy/ssh-action@v1.0.3
+           with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USERNAME }}
+                key: ${{ secrets.SSHKEY }}
+                script: "cd /home/ubuntu/devops && ./laraveldeploy.sh"
